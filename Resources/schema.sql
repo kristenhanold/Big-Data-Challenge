@@ -1,4 +1,4 @@
-CREATE TABLE review_id_table (
+CREATE TABLE apps_review_id_table (
   review_id TEXT PRIMARY KEY NOT NULL,
   customer_id INTEGER,
   product_id TEXT,
@@ -7,13 +7,13 @@ CREATE TABLE review_id_table (
 );
 
 -- This table will contain only unique values
-CREATE TABLE products (
+CREATE TABLE apps_products (
   product_id TEXT PRIMARY KEY NOT NULL UNIQUE,
   product_title TEXT
 );
 
 -- Customer table for first data set
-CREATE TABLE customers (
+CREATE TABLE apps_customers (
   customer_id INT PRIMARY KEY NOT NULL UNIQUE,
   customer_count INT
 );
@@ -26,3 +26,24 @@ CREATE TABLE vine_table (
   total_votes INTEGER,
   vine TEXT
 );
+
+CREATE TABLE electronics_review_id_table (
+  review_id TEXT PRIMARY KEY NOT NULL,
+  customer_id INTEGER,
+  product_id TEXT,
+  product_parent INTEGER,
+  review_date DATE -- this should be in the formate yyyy-mm-dd
+);
+
+-- This table will contain only unique values
+CREATE TABLE electronics_products (
+  product_id TEXT PRIMARY KEY NOT NULL UNIQUE,
+  product_title TEXT
+);
+
+-- Customer table for first data set
+CREATE TABLE electronics_customers (
+  customer_id INT PRIMARY KEY NOT NULL UNIQUE,
+  customer_count INT
+);
+
